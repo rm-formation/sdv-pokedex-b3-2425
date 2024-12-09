@@ -55,6 +55,7 @@ main {
     display: flex;
     flex: 1;
     gap: 2rem;
+    min-height: 0;
 }
 
 main nav {
@@ -67,6 +68,11 @@ main nav > div {
 
 main section {
     flex: 1;
+}
+
+.conteneur {
+    height: 100%;
+    overflow: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;

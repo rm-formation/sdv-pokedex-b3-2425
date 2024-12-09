@@ -17,11 +17,11 @@ const pokemons = [
 ];
 
 window.onload = function() {
-    const section = document.querySelector("main > section");
+    const conteneur = document.querySelector("main > section .conteneur");
     for (let i = 0; i < pokemons.length; i++) {
         const pokemon = pokemons[i];
         const divPokemon = creerDivPokemonListe(pokemon);
-        section.append(divPokemon);
+        conteneur.append(divPokemon);
     }
 }
 
