@@ -1,4 +1,73 @@
 body {
     margin: 0;
     height: 100vh;
+
+    font-family: "Press Start 2P", arial, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+.bordure-pokemon {
+    --borderWidth: 0.5rem;
+
+    position: relative;
+    padding: 0.5rem;
+    border: var(--borderWidth) double black;
+    border-radius: 0.3rem;
+}
+
+.bordure-pokemon::before, .bordure-pokemon::after {
+    position: absolute;
+    content: "";
+    display: block;
+    --rayon: calc(var(--borderWidth) * 2);
+    --decalage: calc((var(--borderWidth) * -1.5)); 
+    height: var(--rayon);
+    width: var(--rayon);
+    border: 0.1rem solid black;
+    border-radius: 100%;
+    background: linear-gradient(black 50%, white 50%);
+}
+
+.bordure-pokemon::before {
+    top: var(--decalage);
+    left: var(--decalage);
+}
+
+.bordure-pokemon::after {
+    right: var(--decalage);
+    bottom: var(--decalage);
+}
+
+header, main, footer {
+    margin: 0.5rem;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    gap: 2rem;
+}
+
+main nav {
+    width: 15rem;
+}
+
+main nav > div {
+    margin-bottom: 1rem;
+}
+
+main section {
+    flex: 1;
+}
+
+footer {
 }
