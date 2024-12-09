@@ -17,6 +17,10 @@ const pokemons = [
 ];
 
 window.onload = function() {
+    
+}
+
+function afficherListePokemons() {
     const conteneur = document.querySelector("main > section .conteneur");
     for (let i = 0; i < pokemons.length; i++) {
         const pokemon = pokemons[i];
@@ -28,6 +32,7 @@ window.onload = function() {
 function creerDivPokemonListe(pokemon) {
     const div = document.createElement("div");
     div.classList.add("div-pokemon-liste");
+    div.setAttribute("data-pokemon-id", pokemon.id);
 
     const img = document.createElement("img");
     img.src = pokemon.imgUrl;
