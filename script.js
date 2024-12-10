@@ -16,12 +16,12 @@ const pokemons = [
     },
 ];
 
-window.onload = function() {
-    
-}
+const boutonPokedex = document.querySelector(".bouton-pokedex");
+boutonPokedex.addEventListener("click", afficherListePokemons);
 
 function afficherListePokemons() {
     const conteneur = document.querySelector("main > section .conteneur");
+    conteneur.innerHTML = "";
     for (let i = 0; i < pokemons.length; i++) {
         const pokemon = pokemons[i];
         const divPokemon = creerDivPokemonListe(pokemon);
@@ -47,6 +47,10 @@ function creerDivPokemonListe(pokemon) {
     div.append(spanNom);
     div.append(spanId);
 
+    div.onclick = function() {
+        afficherPokemon(pokemon);
+    };
+
     return div;
 }
 
@@ -59,4 +63,11 @@ function creerDivPokemonListeVersionInnerHTML(pokemon) {
         <span>${pokemon.id}</span>
     `;
     return div;
+}
+
+function afficherPokemon(pokemon) {
+    const div = creerDivPokemonListe(pokemon);
+    const conteneur = document.querySelector("main > section .conteneur");
+    conteneur.innerHTML = "";
+    conteneur.append(div);
 }

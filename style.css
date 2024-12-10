@@ -64,6 +64,13 @@ main nav {
 
 main nav > div {
     margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+main nav > div:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
 }
 
 main section {
