@@ -19,7 +19,7 @@ async function afficherListePokemons() {
 }
 
 async function afficherListePokemonsOptimisee() {
-    const responsePokemons = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=5000");
+    const responsePokemons = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=151");
     const json = await responsePokemons.json();
     const pokemons = json.results;
 
@@ -55,9 +55,9 @@ function creerDivPokemonListe(pokemon) {
     div.setAttribute("data-pokemon-id", pokemon.id);
 
     const img = document.createElement("img");
-    img.src = pokemon.sprites.other["official-artwork"].front_default;
+    //img.src = pokemon.sprites.other["official-artwork"].front_default;
     //img.src = pokemon.sprites.other.showdown.front_default;
-    //img.src = pokemon.sprites.versions["generation-i"]["red-blue"]["front_transparent"];
+    img.src = pokemon.sprites.versions["generation-i"]["red-blue"]["front_transparent"];
 
     const spanNom = document.createElement("span");
     spanNom.innerText = pokemon.name;
